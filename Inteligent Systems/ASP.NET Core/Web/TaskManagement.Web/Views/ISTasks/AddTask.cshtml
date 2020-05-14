@@ -1,0 +1,20 @@
+﻿@model TaskManagement.Web.ViewModels.ISTasks.AddTaskInputModel
+@using TaskManagement.Common
+@{
+    this.ViewData["Title"] = "Add Task";
+}
+
+    <form method="post" class="col-md-6" asp-action="AddTask">
+        <div>
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="Description"></label>
+            <input asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <br/>
+        <button type="submit" class="btn btn-primary">Add Task</button>
+    </form>

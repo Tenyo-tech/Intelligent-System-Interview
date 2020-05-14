@@ -1,0 +1,23 @@
+﻿@model TaskManagement.Web.ViewModels.ISTasks.EditTaskViewModel
+@using TaskManagement.Common
+@{
+    this.ViewData["Title"] = "Edit Task";
+}
+
+    <form method="post" class="col-md-6" asp-action="EditTask">
+        <div>
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" value="@Model.Name"/>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="Description"></label>
+            <input asp-for="Description" class="form-control" value="@Model.Description" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div>
+            <input type="hidden" asp-for="Id" value="@Model.Id"/>
+        </div>
+        <br/>
+        <button type="submit" class="btn btn-primary">Edit Task</button>
+    </form>

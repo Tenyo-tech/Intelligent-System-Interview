@@ -1,0 +1,44 @@
+﻿@using TaskManagement.Common
+@model IEnumerable<TaskManagement.Web.ViewModels.ISTasks.AllUnFinishedTasksViewModel>
+
+@{
+    this.ViewData["Title"] = "To Do List";
+}
+
+<div class="cent">
+    <a class="btn btn-primary" asp-controller="ISTasks" asp-action="AddTask">
+        Add Task
+    </a>
+</div>
+<br/>
+
+<table class="table table-striped table-dark table-bordered">
+    <thead>
+        <tr class="text-center">
+            <th scope="col">Task</th>
+            <th colspan="2">Description</th>
+            <th colspan="2">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var task in Model)
+        {
+            <tr class="text-center">
+                <th>@task.Name</th>
+                <th>@task.Description</th>
+                <th><a class="btn btn-primary" asp-controller="ISTasks" asp-action="EditTask" asp-route-taskId="@task.Id">Edit</a></th>
+                <th>@task.Status</th>
+                <th>
+                    <form asp-controller="ISTasks" asp-action="Archive" method="post">
+                        <div>
+                            <input type="hidden" name="Id" value="@task.Id" />
+                        </div>
+                        <input type="submit" class="btn btn-primary" value="Finished"/>
+                    </form>
+                </th>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

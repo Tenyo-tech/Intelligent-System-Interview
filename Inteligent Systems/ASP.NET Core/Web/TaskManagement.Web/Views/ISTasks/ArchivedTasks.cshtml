@@ -1,0 +1,24 @@
+﻿@using TaskManagement.Common
+@{
+    this.ViewData["Title"] = "Home Page";
+}
+
+<table class="table table-striped table-dark table-bordered">
+        <thead>
+            <tr class="text-center">
+                <th scope="col">Task</th>
+                <th scope="col">Description</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var task in Model)
+            {
+                <tr class="text-center">
+                    <th>@task.Name</th>
+                    <th>@task.Description</th>
+                    <th>@task.Status</th>
+                </tr>
+            }
+        </tbody>
+    </table>

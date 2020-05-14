@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\TaskManagement.Data.Common\TaskManagement.Data.Common.csproj" />
     <ProjectReference Include="..\..\Data\TaskManagement.Data.Models\TaskManagement.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Web\TaskManagement.Web.ViewModels\TaskManagement.Web.ViewModels.csproj" />
     <ProjectReference Include="..\TaskManagement.Services.Mapping\TaskManagement.Services.Mapping.csproj" />
   </ItemGroup>
 
